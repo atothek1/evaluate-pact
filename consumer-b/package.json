@@ -1,0 +1,8 @@
+{
+  "name": "consumer-b",
+  "version": "1.0.0",
+  "description": "evaluation consumer B for pact and pact broker",
+  "main": "src/index.ts",
+  "license": "MIT",
+  "private": true
+}
