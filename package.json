@@ -1,10 +1,11 @@
 {
   "name": "evaluate-pact",
   "version": "1.0.0",
-  "main": "index.js",
   "license": "MIT",
   "private": true,
   "scripts": {
+    "test:consumer-a": "yarn workspace consumer-a test",
+    "test:consumer-b": "yarn workspace consumer-b test",
     "test:provider": "yarn workspace provider test",
     "start:provider": "yarn workspace provider start"
   },
@@ -23,6 +24,7 @@
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.4",
     "@babel/preset-typescript": "^7.16.0",
+    "@pact-foundation/absolute-version": "^0.0.4",
     "@pact-foundation/pact": "^9.17.0",
     "@types/express": "^4.17.13",
     "@types/faker": "^5.5.9",

@@ -2,7 +2,7 @@ const faker = require("faker")
 import { Product } from "../../src/types";
 
 const {commerce, datatype, image } = faker;
-faker.seed(5678);
+faker.seed(1234);
 
 function createImageUrls(): string [] {
     const res: string[] = [];
@@ -16,9 +16,8 @@ function createProduct(): Product {
     return {
         id: datatype.uuid(),
         name: commerce.productName(),
-        price: parseFloat(commerce.price()) * 10,
         description: commerce.productDescription(),
-        isAvailable: datatype.boolean(),
+        price: parseFloat(commerce.price()) * 10,
         imageUrls: createImageUrls()
     }
 }

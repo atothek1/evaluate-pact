@@ -1,0 +1,216 @@
+{
+  "consumer": {
+    "name": "e2e Consumer B"
+  },
+  "provider": {
+    "name": "e2e Provider"
+  },
+  "interactions": [
+    {
+      "description": "a request for fetching all products",
+      "providerState": "has a collection of products",
+      "request": {
+        "method": "GET",
+        "path": "/v1/products"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8"
+        },
+        "body": [
+          {
+            "id": "379d79cc-cd42-443c-9f2e-15087a5bc518",
+            "name": "Small Granite Table",
+            "description": "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+            "price": 230,
+            "imageUrls": [
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480"
+            ]
+          },
+          {
+            "id": "c4e35b9e-1f51-4e6a-b68c-c5796d96fc02",
+            "name": "Awesome Metal Shoes",
+            "description": "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
+            "price": 3770,
+            "imageUrls": [
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480"
+            ]
+          },
+          {
+            "id": "35ed7ae0-0f2b-40ea-a9f8-604865c89119",
+            "name": "Handcrafted Rubber Keyboard",
+            "description": "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+            "price": 330,
+            "imageUrls": [
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480"
+            ]
+          },
+          {
+            "id": "95e7c1f6-f1ce-44c9-a703-e6c0973f41a1",
+            "name": "Unbranded Soft Chicken",
+            "description": "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
+            "price": 3300,
+            "imageUrls": [
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480"
+            ]
+          },
+          {
+            "id": "731031eb-6f8b-40f4-b6f9-9e8a2b22fbbd",
+            "name": "Sleek Rubber Salad",
+            "description": "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
+            "price": 4050,
+            "imageUrls": [
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480"
+            ]
+          },
+          {
+            "id": "229286f0-798c-484d-b02a-6cfb0ce82ff2",
+            "name": "Handmade Steel Car",
+            "description": "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
+            "price": 2550,
+            "imageUrls": [
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480"
+            ]
+          },
+          {
+            "id": "1efd523b-75ee-4e94-b582-be2bdbbe7c19",
+            "name": "Fantastic Plastic Sausages",
+            "description": "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
+            "price": 4190,
+            "imageUrls": [
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480"
+            ]
+          },
+          {
+            "id": "53a91906-5a93-4d94-b2f2-cf023519206e",
+            "name": "Handcrafted Frozen Towels",
+            "description": "The Football Is Good For Training And Recreational Purposes",
+            "price": 5700,
+            "imageUrls": [
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480"
+            ]
+          },
+          {
+            "id": "1a55bf23-8d4f-4f6a-9441-ac2c6c0e5a69",
+            "name": "Practical Concrete Tuna",
+            "description": "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
+            "price": 9980,
+            "imageUrls": [
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480"
+            ]
+          },
+          {
+            "id": "f8e6f0d0-8a70-4e6f-8965-559d630b653c",
+            "name": "Awesome Soft Cheese",
+            "description": "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
+            "price": 5220,
+            "imageUrls": [
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480",
+              "http://placeimg.com/640/480"
+            ]
+          }
+        ],
+        "matchingRules": {
+          "$.body": {
+            "match": "type"
+          }
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}

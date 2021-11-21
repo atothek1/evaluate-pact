@@ -4,5 +4,9 @@
   "description": "evaluation consumer B for pact and pact broker",
   "main": "src/index.ts",
   "license": "MIT",
-  "private": true
+  "private": true,
+  "scripts": {
+    "test": "jest --config ./config/jest.config.js",
+    "pact:publish": "pact-broker publish ./pacts --consumer-app-version=\"$(npx @pact-foundation/absolute-version)\" --tag-with-git-branch --broker-base-url=http://localhost:9292"
+  }
 }

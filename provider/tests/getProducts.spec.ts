@@ -1,28 +1,23 @@
-import { Verifier } from "@pact-foundation/pact";
+import { Verifier, VerifierOptions } from "@pact-foundation/pact";
+import { versionFromGitTag } from "@pact-foundation/absolute-version";
 
 describe("provider/getProducts()", () => {
-    const options = {
+    const options: VerifierOptions = {
         provider: "e2e Provider",
         logLevel: "info",
         providerBaseUrl: "http://localhost:3001",
-
-        // Fetch pacts from broker
         pactBrokerUrl: "http://localhost:9292/",
-
-        // Fetch from broker with given tags
         consumerVersionTags: ["main"],
-
-        // Tag provider version with given tags
-        providerVersionTags: ["main"], // in real code, this would be dynamically set by process.env.GIT_BRANCH
-
-        // Enables "pending pacts" feature
+        providerVersionTags: ["main"],
         enablePending: true,
+        publishVerificationResult: true,
+        providerVersion: versionFromGitTag(),
     };
-    it("", () => {
-
-        return new Verifier(options).verifyProvider().then(output => {
-            console.log("Pact Verification Complete!")
-            console.log(output)
-        })
+    it("should verify pact successfully", async () => {
+        // expect.assertions(1)
+        const verifier = new Verifier(options);
+        // why getting an string? how to fail the test if verification fails?
+        const actual = await verifier.verifyProvider();
+        console.log(actual);
     });
 });
