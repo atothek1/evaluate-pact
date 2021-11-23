@@ -14,10 +14,14 @@ describe("provider/getProducts()", () => {
         providerVersion: versionFromGitTag(),
     };
     it("should verify pact successfully", async () => {
-        // expect.assertions(1)
-        const verifier = new Verifier(options);
-        // why getting an string? how to fail the test if verification fails?
-        const actual = await verifier.verifyProvider();
-        console.log(actual);
+        try{
+            const verifier = new Verifier(options);
+            const actual = await verifier.verifyProvider();
+            console.log(actual);
+            return actual;
+        } catch ( error ) {
+            console.log(error.messge)
+            return error;
+        }
     });
 });

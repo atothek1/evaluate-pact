@@ -57,6 +57,7 @@ module.exports = packagePath => ( {
     globals: {
         __IS_DEVELOPMENT__: true,
         __IS_PRODUCTION__: false,
+        __IS_TESTING__: true,
         __NAME__: "test-app",
         __VERSION__: "1.0.0-test",
         __ENVIRONMENT__: "development",

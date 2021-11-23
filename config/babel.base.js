@@ -12,7 +12,8 @@ module.exports = (api) => {
                     node: "current"
                 },
             }],
-            "@babel/typescript"
+            "@babel/typescript",
+            "@babel/react"
         ]
     };
 };

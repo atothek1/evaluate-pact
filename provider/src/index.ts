@@ -8,8 +8,10 @@ server.use((_req, res, next) => {
     next();
 })
 
-server.get("/v1/products", (_req, res) => {
-    res.status(200).send(products)
+server.get("/v1/products", (req, res) => {
+    const {isAvailable} = req.query;
+    const result = isAvailable !== undefined ? products.filter(p => p.isAvailable) : products;
+    res.status(200).send(result);
 });
 
 server.listen(3001, () => {

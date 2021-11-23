@@ -4,14 +4,16 @@
   "license": "MIT",
   "private": true,
   "scripts": {
+    "test:consumers": "yarn test:consumer-a && yarn test:consumer-b && yarn test:consumer-c",
     "test:consumer-a": "yarn workspace consumer-a test",
     "test:consumer-b": "yarn workspace consumer-b test",
+    "test:consumer-c": "yarn workspace consumer-c test",
+    "pact:publish": "yarn workspace consumer-a pact:publish && yarn workspace consumer-b pact:publish && yarn workspace consumer-c pact:publish",
     "test:provider": "yarn workspace provider test",
     "start:provider": "yarn workspace provider start"
   },
   "workspaces": [
-    "consumer-a",
-    "consumer-b",
+    "consumer-*",
     "provider"
   ],
   "dependencies": {
@@ -23,6 +25,7 @@
   "devDependencies": {
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.4",
+    "@babel/preset-react": "^7.16.0",
     "@babel/preset-typescript": "^7.16.0",
     "@pact-foundation/absolute-version": "^0.0.4",
     "@pact-foundation/pact": "^9.17.0",
@@ -35,6 +38,7 @@
     "jest": "^27.3.1",
     "msw": "^0.35.0",
     "ts-node": "^10.4.0",
-    "typescript": "^4.5.2"
+    "typescript": "^4.5.2",
+    "whatwg-fetch": "^3.6.2"
   }
 }
