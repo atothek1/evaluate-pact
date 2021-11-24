@@ -1,7 +1,13 @@
 // Setup of mocked api backend endpoints
-import { products } from "../../fixtures/getProducts/200";
+import * as data from "../../pact/pacts/e2e_consumer_c-e2e_provider.json"
 import { useGetProducts } from "../../src/hooks/useGetProducts";
 import { createMockServer, renderHook, rest, sleep } from "../utils";
+
+const products = data.interactions
+    .find(interaction => 
+        interaction.description === "a request for fetching all products" &&
+        interaction.providerState === "has a collection of products"
+    )?.response.body
 
 const mockServer = createMockServer(
     rest.get("/v1/products", async (_req, res, ctx) => {
