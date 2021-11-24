@@ -38,6 +38,8 @@ app.route("/v1/products")
         const result = isAvailable !== undefined
             ? productRepository.get().filter(p => p.isAvailable)
             : productRepository.get();
+        if (isAvailable)
+            console.log("Return the following results", result, "Based on the filter", isAvailable)
         res.status(200).send(result);
     })
     .post((req, res) => {
