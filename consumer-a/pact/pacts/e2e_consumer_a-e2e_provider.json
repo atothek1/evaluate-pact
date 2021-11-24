@@ -7,6 +7,54 @@
   },
   "interactions": [
     {
+      "description": "an attempt to add an product",
+      "providerState": "fails if required field is missing",
+      "request": {
+        "method": "POST",
+        "path": "/v1/products",
+        "headers": {
+          "content-type": "application/json"
+        },
+        "body": {
+          "id": "308e4833-e62d-4484-8d5a-240a42756117",
+          "name": "Fantastic Concrete Towels",
+          "price": 9050,
+          "isAvailable": false,
+          "imageUrls": [
+            "http://placeimg.com/640/480",
+            "http://placeimg.com/640/480",
+            "http://placeimg.com/640/480",
+            "http://placeimg.com/640/480",
+            "http://placeimg.com/640/480",
+            "http://placeimg.com/640/480",
+            "http://placeimg.com/640/480",
+            "http://placeimg.com/640/480",
+            "http://placeimg.com/640/480",
+            "http://placeimg.com/640/480"
+          ]
+        },
+        "matchingRules": {
+          "$.body": {
+            "match": "type"
+          }
+        }
+      },
+      "response": {
+        "status": 400,
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8"
+        },
+        "body": {
+          "error": "Missing field 'description' in payload"
+        },
+        "matchingRules": {
+          "$.body": {
+            "match": "type"
+          }
+        }
+      }
+    },
+    {
       "description": "a request for fetching all products",
       "providerState": "has a collection of products",
       "request": {
@@ -209,6 +257,93 @@
               "http://placeimg.com/640/480"
             ]
           }
+        ],
+        "matchingRules": {
+          "$.body": {
+            "match": "type"
+          }
+        }
+      }
+    },
+    {
+      "description": "an attempt to add an product",
+      "providerState": "succeeds for a valid product",
+      "request": {
+        "method": "POST",
+        "path": "/v1/products",
+        "headers": {
+          "content-type": "application/json"
+        },
+        "body": {
+          "id": "d724e8bc-94c2-4841-9a66-579e91110ca3",
+          "name": "Generic Steel Shoes",
+          "price": 6950,
+          "description": "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
+          "isAvailable": true,
+          "imageUrls": [
+            "http://placeimg.com/640/480",
+            "http://placeimg.com/640/480",
+            "http://placeimg.com/640/480",
+            "http://placeimg.com/640/480",
+            "http://placeimg.com/640/480",
+            "http://placeimg.com/640/480",
+            "http://placeimg.com/640/480",
+            "http://placeimg.com/640/480",
+            "http://placeimg.com/640/480",
+            "http://placeimg.com/640/480"
+          ]
+        },
+        "matchingRules": {
+          "$.body": {
+            "match": "type"
+          }
+        }
+      },
+      "response": {
+        "status": 201,
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8"
+        },
+        "body": {
+          "id": "d724e8bc-94c2-4841-9a66-579e91110ca3",
+          "name": "Generic Steel Shoes",
+          "price": 6950,
+          "description": "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
+          "isAvailable": true,
+          "imageUrls": [
+            "http://placeimg.com/640/480",
+            "http://placeimg.com/640/480",
+            "http://placeimg.com/640/480",
+            "http://placeimg.com/640/480",
+            "http://placeimg.com/640/480",
+            "http://placeimg.com/640/480",
+            "http://placeimg.com/640/480",
+            "http://placeimg.com/640/480",
+            "http://placeimg.com/640/480",
+            "http://placeimg.com/640/480"
+          ]
+        },
+        "matchingRules": {
+          "$.body.id": {
+            "match": "type"
+          }
+        }
+      }
+    },
+    {
+      "description": "a request for fetching all products",
+      "providerState": "has no products",
+      "request": {
+        "method": "GET",
+        "path": "/v1/products"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8"
+        },
+        "body": [
+
         ],
         "matchingRules": {
           "$.body": {

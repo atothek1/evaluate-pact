@@ -1,7 +1,15 @@
-import { Interaction, InteractionObject, Matchers, RequestOptions, ResponseOptions } from '@pact-foundation/pact';
-import { products } from '../data/products';
+import { Matchers, RequestOptions, ResponseOptions } from '@pact-foundation/pact';
+import { createProduct, productRepository } from '../data/products';
+import { Product } from '../types';
 
 const { like } = Matchers;
+function createProducts(count: number = 10): Product[] {
+    const res: Product[] = [];
+    for (let i = 0; i < count; i++) {
+        res.push(createProduct());
+    }
+    return res
+}
 
 export const productsRequest : { uponReceiving: string, withRequest: RequestOptions } = {
     uponReceiving: 'a request for fetching all products',
@@ -18,6 +26,6 @@ export const withListOfProductsRequest : {state: string | undefined, willRespond
         headers: {
             "Content-Type": "application/json; charset=utf-8",
         },
-        body: like(products),
+        body: like(createProducts()),
     }
 };

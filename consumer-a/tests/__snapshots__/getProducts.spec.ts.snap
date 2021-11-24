@@ -1,6 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Pact between e2e Consumer A and e2e Provider with 30000 ms timeout for Pact getProducts() returns a list of products 1`] = `
+exports[`Pact between e2e Consumer A and e2e Provider with 30000 ms timeout for Pact adding a product fails if required field is missing 1`] = `
+Object {
+  "error": "Missing field 'description' in payload",
+}
+`;
+
+exports[`Pact between e2e Consumer A and e2e Provider with 30000 ms timeout for Pact adding a product succeeds for a valid product 1`] = `
+Object {
+  "description": "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
+  "id": "d724e8bc-94c2-4841-9a66-579e91110ca3",
+  "imageUrls": Array [
+    "http://placeimg.com/640/480",
+    "http://placeimg.com/640/480",
+    "http://placeimg.com/640/480",
+    "http://placeimg.com/640/480",
+    "http://placeimg.com/640/480",
+    "http://placeimg.com/640/480",
+    "http://placeimg.com/640/480",
+    "http://placeimg.com/640/480",
+    "http://placeimg.com/640/480",
+    "http://placeimg.com/640/480",
+  ],
+  "isAvailable": true,
+  "name": "Generic Steel Shoes",
+  "price": 6950,
+}
+`;
+
+exports[`Pact between e2e Consumer A and e2e Provider with 30000 ms timeout for Pact getProducts() if no products are available, it returns an empty list 1`] = `Array []`;
+
+exports[`Pact between e2e Consumer A and e2e Provider with 30000 ms timeout for Pact getProducts() if products are available, it returns a list of products 1`] = `
 Array [
   Object {
     "description": "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",

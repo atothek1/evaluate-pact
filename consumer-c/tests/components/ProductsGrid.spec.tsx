@@ -22,14 +22,18 @@ beforeAll(() => mockedProvider.setup().then(options => {
     process.env.API_HOST = `http://localhost:${options.port}`;
 }));
 
+beforeEach(async () => {
+    await mockedProvider.removeInteractions()
+})
+
 afterAll(() => mockedProvider.finalize());
 
 afterEach(() => mockedProvider.verify());
 
 describe("consumer-c/components/products/ProductsGrid", () => {
     describe("integration without filters", () => {
-        beforeEach(() => {
-            mockedProvider.addInteraction({
+        beforeEach(async () => {
+            await mockedProvider.addInteraction({
                 state: "has a collection of products",
                 uponReceiving: "a request for fetching all products",
                 withRequest: {
@@ -61,8 +65,8 @@ describe("consumer-c/components/products/ProductsGrid", () => {
     });
 
     describe("integration with filters", () => {
-        beforeEach(() => {
-            mockedProvider.addInteraction({
+        beforeEach(async () => {
+            await mockedProvider.addInteraction({
                 state: "has a collection of products that are available",
                 uponReceiving: "a request for fetching available products",
                 withRequest: {
