@@ -1,61 +1,76 @@
-import { products as mockedProducts } from "../fixtures/getProducts/200";
-import { Pact, Matchers } from "@pact-foundation/pact";
-import { resolve } from "path";
-import { getProducts } from "../src";
+import { pactWith } from 'jest-pact';
+import { ProductApi } from "../src";
+import { productsRequest, withListOfProductsRequest } from "provider/src/endpoints";
+import { Matchers } from '@pact-foundation/pact';
+import { createProduct } from 'provider/src/data/products';
+import { Product } from '../src/types';
+import { addProduct, failProductCreation, succeedProductCreation } from './productRequests';
 
-const {like} = Matchers;
+const { like } = Matchers;
 
-const mockedProvider = new Pact({
-    consumer: "e2e Consumer A",
-    provider: "e2e Provider",
-    // port: 9292,
-    log: resolve(process.cwd(), "logs", "mockserver-integration.log"),
-    dir: resolve(process.cwd(), "pacts"),
-    logLevel: "warn",
-    spec: 2,
-})
+pactWith({ consumer: 'e2e Consumer A', provider: 'e2e Provider' }, provider => {
+  let client: ProductApi;
 
-beforeAll(() => mockedProvider.setup().then(options => {
-    console.log(`http://localhost:${options.port}`);
-    process.env.API_HOST = `http://localhost:${options.port}`;
-}));
+  beforeEach(async () => {
+    await provider.removeInteractions()
+    client = new ProductApi(provider.mockService.baseUrl)
+  });
 
-afterAll(() => mockedProvider.finalize());
+  describe('getProducts()', () => {
 
-afterEach(() => mockedProvider.verify());
-
-describe("consumer-a/getProducts()", () => {
-
-    beforeEach(() => {
-        mockedProvider.addInteraction({
-            state: "has a collection of products",
-            uponReceiving: "a request for fetching all products",
-            withRequest: {
-                method: "GET",
-                path: "/v1/products",
-            },
-            willRespondWith: {
-                status: 200,
-                headers: {
-                    "Content-Type": "application/json; charset=utf-8",
-                },
-                body: like(mockedProducts),
-            },
-        })
+    test('if products are available, it returns a list of products', async () =>{      
+      await provider.addInteraction({
+        ...productsRequest,
+        ...withListOfProductsRequest
+      })
+      await client.getProducts().then(products => {
+        expect(products).toMatchSnapshot()
+      })
     });
 
-    it("200", async () => {
-        const actual = await getProducts(process.env.API_HOST);
-        const expected = expect.objectContaining({
-            id: expect.any(String),
-            name: expect.any(String),
-            isAvailable: expect.any(Boolean),
-            price: expect.any(Number),
-            imageUrls: expect.arrayContaining([expect.any(String)])
-        });
-        expect(actual).toBeDefined();
-        expect(actual).toBeInstanceOf(Array);
-        expect(actual[0]).toMatchObject(expected)
-        expect(true).toBeTruthy();
+    test('if no products are available, it returns an empty list', async () =>{      
+      await provider.addInteraction({
+        ...productsRequest,
+        state: "has no products",
+        willRespondWith: {
+            status: 200,
+            headers: {
+                "Content-Type": "application/json; charset=utf-8",
+            },
+            body: like([]),
+        }
+      })
+      await client.getProducts().then(products => {
+        expect(products).toMatchSnapshot()
+      })
+    });
+  });
+
+  test('adding a product fails if required field is missing', async () => {
+      const product = {
+        ...createProduct(),
+        description: undefined
+      } as any as Product;
+      
+      await provider.addInteraction({
+        ...addProduct(product),
+        ...failProductCreation('fails if required field is missing', "Missing field 'description' in payload")
+      })
+      await client.addProduct(product as any as Product).catch(error => {
+        expect(error).toMatchSnapshot()
+      })
+      expect.assertions(1)
+    });
+    
+   test('adding a product succeeds for a valid product', async () => {
+      const product = createProduct() as any as Product;
+      await provider.addInteraction({
+        ...addProduct(product),
+        ...succeedProductCreation('succeeds for a valid product', product)
+      })
+      await client.addProduct(product).then(product => {
+        expect(product).toMatchSnapshot()
+      })
+      expect.assertions(1)
     });
 })

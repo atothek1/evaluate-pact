@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`consumer-c/components/products/ProductsGrid integration with filters should render ProductsGrid component with only available products 1`] = `
+exports[`Pact between e2e Consumer C and e2e Provider with 30000 ms timeout for Pact getProducts() integration without filters 1`] = `
 <body>
   <div>
     <h2>
@@ -13,7 +13,97 @@ exports[`consumer-c/components/products/ProductsGrid integration with filters sh
             src="http://placeimg.com/640/480"
           />
           <h2>
-            Intelligent Metal Towels
+            Sleek Soft Chips
+          </h2>
+          <p>
+            Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles
+          </p>
+          <p
+            style="font-weight: bold;"
+          >
+            41.7
+          </p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <img
+            src="http://placeimg.com/640/480"
+          />
+          <h2>
+            Licensed Plastic Tuna
+          </h2>
+          <p>
+            The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality
+          </p>
+          <p
+            style="font-weight: bold;"
+          >
+            84.4
+          </p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <img
+            src="http://placeimg.com/640/480"
+          />
+          <h2>
+            Tasty Cotton Pants
+          </h2>
+          <p>
+            Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles
+          </p>
+          <p
+            style="font-weight: bold;"
+          >
+            99.3
+          </p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <img
+            src="http://placeimg.com/640/480"
+          />
+          <h2>
+            Generic Frozen Gloves
+          </h2>
+          <p>
+            The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality
+          </p>
+          <p
+            style="font-weight: bold;"
+          >
+            57.7
+          </p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <img
+            src="http://placeimg.com/640/480"
+          />
+          <h2>
+            Small Metal Mouse
+          </h2>
+          <p>
+            New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart
+          </p>
+          <p
+            style="font-weight: bold;"
+          >
+            95.1
+          </p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <img
+            src="http://placeimg.com/640/480"
+          />
+          <h2>
+            Intelligent Wooden Soap
           </h2>
           <p>
             Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support
@@ -21,7 +111,79 @@ exports[`consumer-c/components/products/ProductsGrid integration with filters sh
           <p
             style="font-weight: bold;"
           >
-            5.6
+            25.7
+          </p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <img
+            src="http://placeimg.com/640/480"
+          />
+          <h2>
+            Awesome Frozen Chair
+          </h2>
+          <p>
+            The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design
+          </p>
+          <p
+            style="font-weight: bold;"
+          >
+            4
+          </p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <img
+            src="http://placeimg.com/640/480"
+          />
+          <h2>
+            Awesome Granite Gloves
+          </h2>
+          <p>
+            The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive
+          </p>
+          <p
+            style="font-weight: bold;"
+          >
+            72.6
+          </p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <img
+            src="http://placeimg.com/640/480"
+          />
+          <h2>
+            Small Fresh Pizza
+          </h2>
+          <p>
+            The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients
+          </p>
+          <p
+            style="font-weight: bold;"
+          >
+            29.3
+          </p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <img
+            src="http://placeimg.com/640/480"
+          />
+          <h2>
+            Incredible Soft Bacon
+          </h2>
+          <p>
+            The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design
+          </p>
+          <p
+            style="font-weight: bold;"
+          >
+            71.2
           </p>
         </div>
       </li>
@@ -30,7 +192,7 @@ exports[`consumer-c/components/products/ProductsGrid integration with filters sh
 </body>
 `;
 
-exports[`consumer-c/components/products/ProductsGrid integration without filters should render ProductsGrid component with all products 1`] = `
+exports[`Pact between e2e Consumer C and e2e Provider with 30000 ms timeout for Pact getProducts() with filters 1`] = `
 <body>
   <div>
     <h2>
@@ -43,97 +205,7 @@ exports[`consumer-c/components/products/ProductsGrid integration without filters
             src="http://placeimg.com/640/480"
           />
           <h2>
-            Small Granite Table
-          </h2>
-          <p>
-            Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support
-          </p>
-          <p
-            style="font-weight: bold;"
-          >
-            77.3
-          </p>
-        </div>
-      </li>
-      <li>
-        <div>
-          <img
-            src="http://placeimg.com/640/480"
-          />
-          <h2>
-            Handcrafted Granite Chicken
-          </h2>
-          <p>
-            The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design
-          </p>
-          <p
-            style="font-weight: bold;"
-          >
-            32.8
-          </p>
-        </div>
-      </li>
-      <li>
-        <div>
-          <img
-            src="http://placeimg.com/640/480"
-          />
-          <h2>
-            Rustic Steel Chair
-          </h2>
-          <p>
-            Carbonite web goalkeeper gloves are ergonomically designed to give easy fit
-          </p>
-          <p
-            style="font-weight: bold;"
-          >
-            91.3
-          </p>
-        </div>
-      </li>
-      <li>
-        <div>
-          <img
-            src="http://placeimg.com/640/480"
-          />
-          <h2>
-            Awesome Plastic Shoes
-          </h2>
-          <p>
-            New ABC 13 9370, 13.3, 5th Gen CoreA5-8250U, 8GB RAM, 256GB SSD, power UHD Graphics, OS 10 Home, OS Office A & J 2016
-          </p>
-          <p
-            style="font-weight: bold;"
-          >
-            1.2
-          </p>
-        </div>
-      </li>
-      <li>
-        <div>
-          <img
-            src="http://placeimg.com/640/480"
-          />
-          <h2>
-            Fantastic Wooden Mouse
-          </h2>
-          <p>
-            The Football Is Good For Training And Recreational Purposes
-          </p>
-          <p
-            style="font-weight: bold;"
-          >
-            52.9
-          </p>
-        </div>
-      </li>
-      <li>
-        <div>
-          <img
-            src="http://placeimg.com/640/480"
-          />
-          <h2>
-            Ergonomic Frozen Sausages
+            Fantastic Concrete Towels
           </h2>
           <p>
             The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients
@@ -141,79 +213,7 @@ exports[`consumer-c/components/products/ProductsGrid integration without filters
           <p
             style="font-weight: bold;"
           >
-            15.7
-          </p>
-        </div>
-      </li>
-      <li>
-        <div>
-          <img
-            src="http://placeimg.com/640/480"
-          />
-          <h2>
-            Intelligent Metal Towels
-          </h2>
-          <p>
-            Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support
-          </p>
-          <p
-            style="font-weight: bold;"
-          >
-            5.6
-          </p>
-        </div>
-      </li>
-      <li>
-        <div>
-          <img
-            src="http://placeimg.com/640/480"
-          />
-          <h2>
-            Incredible Cotton Fish
-          </h2>
-          <p>
-            Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals
-          </p>
-          <p
-            style="font-weight: bold;"
-          >
-            19.7
-          </p>
-        </div>
-      </li>
-      <li>
-        <div>
-          <img
-            src="http://placeimg.com/640/480"
-          />
-          <h2>
-            Fantastic Frozen Car
-          </h2>
-          <p>
-            New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart
-          </p>
-          <p
-            style="font-weight: bold;"
-          >
-            54.6
-          </p>
-        </div>
-      </li>
-      <li>
-        <div>
-          <img
-            src="http://placeimg.com/640/480"
-          />
-          <h2>
-            Refined Cotton Fish
-          </h2>
-          <p>
-            Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles
-          </p>
-          <p
-            style="font-weight: bold;"
-          >
-            92.5
+            90.5
           </p>
         </div>
       </li>

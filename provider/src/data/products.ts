@@ -1,10 +1,10 @@
 const faker = require("faker")
 import { Product } from "../../src/types";
 
-const {commerce, datatype, image } = faker;
+const { commerce, datatype, image } = faker;
 faker.seed(5678);
 
-function createImageUrls(): string [] {
+function createImageUrls(): string[] {
     const res: string[] = [];
     for (let i = 0; i < 10; i++) {
         res.push(image.imageUrl());
@@ -12,7 +12,7 @@ function createImageUrls(): string [] {
     return res
 }
 
-function createProduct(): Product {
+export function createProduct(): Product {
     return {
         id: datatype.uuid(),
         name: commerce.productName(),
@@ -22,13 +22,10 @@ function createProduct(): Product {
         imageUrls: createImageUrls()
     }
 }
-
-function createProducts(): Product [] {
-    const res: Product[] = [];
-    for (let i = 0; i < 10; i++) {
-        res.push(createProduct());
-    }
-    return res
+export class Products {
+    constructor(private products: Product[] = []) { }
+    clear() { this.products = [] }
+    add(...products: Product[]) { this.products.push(...products) }
+    get() { return [ ...this.products ] }
 }
-
-export const products = createProducts();
+export const productRepository = new Products();

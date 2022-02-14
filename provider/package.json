@@ -8,8 +8,6 @@
   "scripts": {
     "prestart": "tsc",
     "start": "nohup node ./dist/index.js &",
-    "pretest": "yarn start",
-    "test": "jest --config ./config/jest.config.js",
-    "posttest": "npx kill-port 3001"
+    "test": "jest --config ./config/jest.config.js"
   }
 }

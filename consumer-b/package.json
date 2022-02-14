@@ -7,6 +7,6 @@
   "private": true,
   "scripts": {
     "test": "jest --config ./config/jest.config.js",
-    "pact:publish": "pact-broker publish ./pacts --consumer-app-version=\"$(npx @pact-foundation/absolute-version)\" --tag-with-git-branch --broker-base-url=http://localhost:9292"
+    "pact:publish": "pact-broker publish ./pacts --consumer-app-version=\"1\" --tag-with-git-branch --broker-base-url=http://localhost:9292"
   }
 }

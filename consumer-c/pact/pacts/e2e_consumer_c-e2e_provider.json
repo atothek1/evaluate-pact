@@ -1,0 +1,393 @@
+{
+  "consumer": {
+    "name": "e2e Consumer C"
+  },
+  "provider": {
+    "name": "e2e Provider"
+  },
+  "interactions": [
+    {
+      "description": "a request for fetching all products",
+      "providerState": "has a collection of products",
+      "request": {
+        "method": "GET",
+        "path": "/v1/products"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8"
+        },
+        "body": [
+          {
+            "id": "780a5887-9d6e-42b4-8192-f14bc32c7a2c",
+            "name": "Sleek Soft Chips",
+            "description": "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
+            "price": 4170,
+            "imageUrls": [
+              "http://placeimg.com/640/480"
+            ],
+            "isAvailable": true
+          },
+          {
+            "id": "b1df0207-6e6c-4d02-87af-f9e39646a121",
+            "name": "Licensed Plastic Tuna",
+            "description": "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
+            "price": 8440,
+            "imageUrls": [
+              "http://placeimg.com/640/480"
+            ],
+            "isAvailable": false
+          },
+          {
+            "id": "24a24975-7863-4e71-958c-8dafe3e50906",
+            "name": "Tasty Cotton Pants",
+            "description": "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
+            "price": 9930,
+            "imageUrls": [
+              "http://placeimg.com/640/480"
+            ],
+            "isAvailable": false
+          },
+          {
+            "id": "8ed1e4bc-b41e-4b82-a04b-b8eddc85172c",
+            "name": "Generic Frozen Gloves",
+            "description": "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
+            "price": 5770,
+            "imageUrls": [
+              "http://placeimg.com/640/480"
+            ],
+            "isAvailable": false
+          },
+          {
+            "id": "68912a13-0c07-4cac-801d-693b1ad7b90b",
+            "name": "Small Metal Mouse",
+            "description": "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
+            "price": 9510,
+            "imageUrls": [
+              "http://placeimg.com/640/480"
+            ],
+            "isAvailable": false
+          },
+          {
+            "id": "ffe42eba-b20c-4d19-a2e5-929e365f2697",
+            "name": "Intelligent Wooden Soap",
+            "description": "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+            "price": 2570,
+            "imageUrls": [
+              "http://placeimg.com/640/480"
+            ],
+            "isAvailable": false
+          },
+          {
+            "id": "83346bf2-e9c8-4d3d-a66d-19a95dce6d60",
+            "name": "Awesome Frozen Chair",
+            "description": "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
+            "price": 400,
+            "imageUrls": [
+              "http://placeimg.com/640/480"
+            ],
+            "isAvailable": true
+          },
+          {
+            "id": "88bae26a-f4ad-42e3-9f06-5d5e3b14ae15",
+            "name": "Awesome Granite Gloves",
+            "description": "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
+            "price": 7260,
+            "imageUrls": [
+              "http://placeimg.com/640/480"
+            ],
+            "isAvailable": true
+          },
+          {
+            "id": "54efd241-92b0-45fe-a24d-7975646f4aba",
+            "name": "Small Fresh Pizza",
+            "description": "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
+            "price": 2930,
+            "imageUrls": [
+              "http://placeimg.com/640/480"
+            ],
+            "isAvailable": true
+          },
+          {
+            "id": "5e7d496f-0190-4b09-bee8-efcf3113495e",
+            "name": "Incredible Soft Bacon",
+            "description": "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
+            "price": 7120,
+            "imageUrls": [
+              "http://placeimg.com/640/480"
+            ],
+            "isAvailable": false
+          }
+        ],
+        "matchingRules": {
+          "$.body": {
+            "match": "type"
+          },
+          "$.body[0].id": {
+            "match": "type"
+          },
+          "$.body[0].name": {
+            "match": "type"
+          },
+          "$.body[0].description": {
+            "match": "type"
+          },
+          "$.body[0].price": {
+            "match": "type"
+          },
+          "$.body[0].imageUrls": {
+            "min": 1
+          },
+          "$.body[0].imageUrls[*].*": {
+            "match": "type"
+          },
+          "$.body[0].isAvailable": {
+            "match": "type"
+          },
+          "$.body[1].id": {
+            "match": "type"
+          },
+          "$.body[1].name": {
+            "match": "type"
+          },
+          "$.body[1].description": {
+            "match": "type"
+          },
+          "$.body[1].price": {
+            "match": "type"
+          },
+          "$.body[1].imageUrls": {
+            "min": 1
+          },
+          "$.body[1].imageUrls[*].*": {
+            "match": "type"
+          },
+          "$.body[1].isAvailable": {
+            "match": "type"
+          },
+          "$.body[2].id": {
+            "match": "type"
+          },
+          "$.body[2].name": {
+            "match": "type"
+          },
+          "$.body[2].description": {
+            "match": "type"
+          },
+          "$.body[2].price": {
+            "match": "type"
+          },
+          "$.body[2].imageUrls": {
+            "min": 1
+          },
+          "$.body[2].imageUrls[*].*": {
+            "match": "type"
+          },
+          "$.body[2].isAvailable": {
+            "match": "type"
+          },
+          "$.body[3].id": {
+            "match": "type"
+          },
+          "$.body[3].name": {
+            "match": "type"
+          },
+          "$.body[3].description": {
+            "match": "type"
+          },
+          "$.body[3].price": {
+            "match": "type"
+          },
+          "$.body[3].imageUrls": {
+            "min": 1
+          },
+          "$.body[3].imageUrls[*].*": {
+            "match": "type"
+          },
+          "$.body[3].isAvailable": {
+            "match": "type"
+          },
+          "$.body[4].id": {
+            "match": "type"
+          },
+          "$.body[4].name": {
+            "match": "type"
+          },
+          "$.body[4].description": {
+            "match": "type"
+          },
+          "$.body[4].price": {
+            "match": "type"
+          },
+          "$.body[4].imageUrls": {
+            "min": 1
+          },
+          "$.body[4].imageUrls[*].*": {
+            "match": "type"
+          },
+          "$.body[4].isAvailable": {
+            "match": "type"
+          },
+          "$.body[5].id": {
+            "match": "type"
+          },
+          "$.body[5].name": {
+            "match": "type"
+          },
+          "$.body[5].description": {
+            "match": "type"
+          },
+          "$.body[5].price": {
+            "match": "type"
+          },
+          "$.body[5].imageUrls": {
+            "min": 1
+          },
+          "$.body[5].imageUrls[*].*": {
+            "match": "type"
+          },
+          "$.body[5].isAvailable": {
+            "match": "type"
+          },
+          "$.body[6].id": {
+            "match": "type"
+          },
+          "$.body[6].name": {
+            "match": "type"
+          },
+          "$.body[6].description": {
+            "match": "type"
+          },
+          "$.body[6].price": {
+            "match": "type"
+          },
+          "$.body[6].imageUrls": {
+            "min": 1
+          },
+          "$.body[6].imageUrls[*].*": {
+            "match": "type"
+          },
+          "$.body[6].isAvailable": {
+            "match": "type"
+          },
+          "$.body[7].id": {
+            "match": "type"
+          },
+          "$.body[7].name": {
+            "match": "type"
+          },
+          "$.body[7].description": {
+            "match": "type"
+          },
+          "$.body[7].price": {
+            "match": "type"
+          },
+          "$.body[7].imageUrls": {
+            "min": 1
+          },
+          "$.body[7].imageUrls[*].*": {
+            "match": "type"
+          },
+          "$.body[7].isAvailable": {
+            "match": "type"
+          },
+          "$.body[8].id": {
+            "match": "type"
+          },
+          "$.body[8].name": {
+            "match": "type"
+          },
+          "$.body[8].description": {
+            "match": "type"
+          },
+          "$.body[8].price": {
+            "match": "type"
+          },
+          "$.body[8].imageUrls": {
+            "min": 1
+          },
+          "$.body[8].imageUrls[*].*": {
+            "match": "type"
+          },
+          "$.body[8].isAvailable": {
+            "match": "type"
+          },
+          "$.body[9].id": {
+            "match": "type"
+          },
+          "$.body[9].name": {
+            "match": "type"
+          },
+          "$.body[9].description": {
+            "match": "type"
+          },
+          "$.body[9].price": {
+            "match": "type"
+          },
+          "$.body[9].imageUrls": {
+            "min": 1
+          },
+          "$.body[9].imageUrls[*].*": {
+            "match": "type"
+          },
+          "$.body[9].isAvailable": {
+            "match": "type"
+          }
+        }
+      }
+    },
+    {
+      "description": "a request for fetching a filtered list of products",
+      "providerState": "has a collection of many products with only a single product available",
+      "request": {
+        "method": "GET",
+        "path": "/v1/products",
+        "query": "isAvailable=true"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8"
+        },
+        "body": [
+          {
+            "id": "308e4833-e62d-4484-8d5a-240a42756117",
+            "name": "Fantastic Concrete Towels",
+            "description": "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
+            "price": 9050,
+            "imageUrls": [
+              "http://placeimg.com/640/480"
+            ],
+            "isAvailable": true
+          }
+        ],
+        "matchingRules": {
+          "$.body[0].id": {
+            "match": "type"
+          },
+          "$.body[0].name": {
+            "match": "type"
+          },
+          "$.body[0].description": {
+            "match": "type"
+          },
+          "$.body[0].price": {
+            "match": "type"
+          },
+          "$.body[0].imageUrls": {
+            "min": 1
+          },
+          "$.body[0].imageUrls[*].*": {
+            "match": "type"
+          }
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}
